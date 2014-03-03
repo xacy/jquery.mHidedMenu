@@ -1,0 +1,1 @@
+mHidedMenu is a simple jquery plugin for transforming nav menus in a minimalistic way.

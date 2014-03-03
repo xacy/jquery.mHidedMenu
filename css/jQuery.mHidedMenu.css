@@ -1,0 +1,108 @@
+#wrap-hid{
+  display: inline-block;
+}
+#wrap-hid[data-state=closed]{
+  background-color: rgba(252,252,252,0);
+}
+#wrap-hid[data-state=open]{
+  background-color: rgba(252,252,252,0.5);
+}
+.hid-logo[data-state=open]{
+  animation-duration: 1s;
+  animation-name: show;
+  animation-fill-mode: forwards;
+}
+.hid-logo[data-state=closed]{
+  animation-duration: 0.5s;
+  animation-name: fade;
+  animation-fill-mode: forwards;
+}
+.hided-menu{
+  list-style: none;
+  display:inline-block;
+  visibility: hidden;
+  padding:1em;
+}
+.hided-menu > li{
+  display: inline-block;
+  margin-right: 2em;
+  zoom:1;
+  *display:inline;
+}
+.hided-menu[data-state=closed]{
+  animation-duration: 1s;
+  animation-name: fade;
+  animation-fill-mode: forwards;
+}
+.hided-menu[data-state=open]{
+  animation-duration: 1s;
+  animation-name: show;
+  animation-fill-mode: forwards;
+
+}
+.hided-close span{
+  position: relative;
+  top:0;
+  right:1em;
+  text-align: right;
+  font-size: 3em;
+  display: inline-block;
+  margin-left: 1em;
+  font-weight: bold;
+}
+.hided-close[data-state=closed] > span{
+  animation-duration: 0.5s;
+  animation-name: rotateout;
+  animation-fill-mode: forwards normal;
+}
+.hided-close[data-state=open] > span{
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  from {
+   -moz-transform: rotate(0deg);
+  }
+
+  to {
+    -moz-transform:rotate(45deg);
+    /*color:#e74c3c*/
+  }
+}
+
+@keyframes rotateout {
+  from {
+   -moz-transform: rotate(45deg);
+   /*color:#F5F5F1;*/
+  }
+
+  to {
+    -moz-transform:rotate(0deg);
+    /*color:#e74c3c;*/
+  }
+  100%{
+    /*color:#e74c3f;*/
+  }
+}
+
+@keyframes fade {
+  from {
+   opacity: 1;
+  }
+
+  to {
+    opacity:0;
+    visibility: hidden;
+  }
+}
+@keyframes show {
+  from {
+   opacity: 0;
+  }
+  to {
+    opacity:1;
+    visibility: inherit;
+  }
+}
